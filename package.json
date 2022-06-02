@@ -1,0 +1,40 @@
+{
+  "name": "dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "vite-build": "vite build",
+    "i18n-extract": "i18next --silent --output 'src/translations/$LOCALE/translations.json' 'src/**/*.{js,jsx,ts,tsx}'"
+  },
+  "dependencies": {
+    "@cubejs-client/core": "^0.30.4",
+    "@cubejs-client/react": "^0.30.4",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/lab": "^5.0.0-alpha.83",
+    "@mui/material": "^5.8.1",
+    "autoprefixer": "^10.4.7",
+    "chart.js": "^3.7.1",
+    "chartjs-plugin-zoom": "^1.2.1",
+    "hammerjs": "^2.0.8",
+    "i18next": "^21.8.5",
+    "i18next-parser": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "postcss": "^8.4.14",
+    "react": "^18.0.0",
+    "react-chartjs-2": "^4.1.0",
+    "react-dom": "^18.0.0",
+    "react-i18next": "^11.16.9"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.9"
+  }
+}
