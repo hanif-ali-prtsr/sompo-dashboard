@@ -3,7 +3,6 @@ import { LoadingButton } from "@mui/lab";
 import {
   Button,
   FormControl,
-  Grid,
   MenuItem,
   Select,
   Typography,
@@ -12,13 +11,14 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useCubeData } from "../cube/context";
-import { useTimeSinceLastUpdate } from "../utils/use-time-since-last-update";
+import { useElapsedTime } from "use-elapsed-time";
+import { secondsToDuration } from '../utils/seconds-to-duration'
 
 export const Controls = () => {
   const { loading, updateData } = useCubeData();
   const [refreshInterval, setRefreshInterval] = useState<number | null>(null);
   const [refreshDuration, setRefreshDuration] = useState<number>(0);
-  const { timeSinceLastUpdate, resetTimer } = useTimeSinceLastUpdate();
+  const { elapsedTime, reset: resetTimer } = useElapsedTime({isPlaying: true, updateInterval: 5})
 
   const { t } = useTranslation();
 
@@ -92,7 +92,7 @@ export const Controls = () => {
       </FormControl>
 
       <Typography sx={{ ml: 4 }} display="inline" color="text.secondary">
-        {t("Last Updated")}: {timeSinceLastUpdate} {t("ago")}
+        {t("Last Updated")}: {secondsToDuration(elapsedTime)} {t("ago")}
       </Typography>
     </>
   );
